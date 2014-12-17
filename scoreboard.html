@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="compiled/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="compiled/flipclock.js"></script>
+		
+		<script src="compiled/waypoints.js"></script>
+
+
+	</head>
+	<body>
+		Scroll all the way down to see the effect.
+		
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+		<div class="clock" style="margin:2em;"></div>
+		
+		
+		<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+	Scroll up and down again.
+		
+		<script type="text/javascript">
+			var clock;
+			
+
+			$('.clock').waypoint(function(direction) {
+				
+				if (direction=='down') {
+					function setIntervalX(callback, delay, repetitions)
+					{
+						var x = 0;
+						var intervalID = window.setInterval(function ()
+						{
+
+							callback();
+
+							if (++x === repetitions) {
+								window.clearInterval(intervalID);
+							}
+						}, delay);
+					}
+					setIntervalX(function () {
+						clock.increment();
+					}, 100, 5);
+				}
+					
+				
+			},{offset: '100%' });
+
+			$(document).ready(function() {
+
+
+
+				// Instantiate a counter
+				clock = new FlipClock($('.clock'), 10, {
+					clockFace: 'Counter'
+				});
+
+				
+				// Attach a click event to a button a increment the clock
+				$('.increment').click(function() {
+					//clock.setValue(10);
+
+					// Or you could decrease the clock
+					// clock.decrement();
+
+					clock.increment();
+
+					// Or set it to a specific value
+					// clock.setValue(x);
+				});
+
+				// Attach a click event to a button a decrement the clock
+				$('.decrement').click(function() {
+					clock.decrement();
+				});
+
+				$('.reset').click(function() {
+					clock.reset();
+				});
+
+			});
+		</script>
+		
+	</body>
+</html> 
